@@ -724,3 +724,24 @@ main.section {
 .brand-logo {
   cursor: pointer;
 }
+
+/* Ensure the manifesto banner shows the photo, not a white card */
+.tile.wide-link-tile{
+  background: transparent !important;   /* cancel the generic .tile background */
+}
+
+.wide-link-tile .wide-bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;                            /* image sits above the parent, below text */
+  background-size: cover;
+  background-position: center 45%;
+  transform: scale(1.06);
+  filter: brightness(0.55) saturate(115%) blur(1px);
+}
+
+.wide-link-tile .wide-copy{ 
+  position: relative; 
+  z-index: 1;                            /* text above the image */
+}
+
